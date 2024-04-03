@@ -73,7 +73,7 @@ const Component1 = () => {
   }
 
   return (
-    <div className='bg-neutral-100 dark:bg-neutral-800 p-4 md:p-10'>
+    <div className=' dark:bg-neutral-700 p-4 md:p-10'>
 
       <div className="flex flex-col gap-10 mx-auto w-fit">
 
@@ -92,7 +92,7 @@ const Component1 = () => {
           </div>
         </div>
 
-        <div className='flex flex-wrap justify-center gap-8 md:justify-start'>
+        <div className="flex gap-4 justify-center md:justify-start items-center flex-wrap width-full">
           {
             Players.map((a, i) => {
               return <PlayerBox {...{ ...a }} key={i} />
@@ -102,15 +102,15 @@ const Component1 = () => {
 
           {/* _________________________ */}
           <div className='p-3 bg-white dark:bg-neutral-700 shadow-lg shadow-slate-200 dark:shadow-slate-950 h-[33rem] sm:h-auto w-full sm:w-72 md:w-60'>
-  <div className="h-[14rem] sm:h-[15rem] md:h-[16rem] w-full">
+  <div className="h-[13rem] sm:h-[14rem] md:h-[15rem] w-full ">
     <Image
       className='h-full w-full object-cover'
       src={"/box.png"} alt={"Box"} height={1000} width={500} />
   </div>
 
-  <div className="px-3 py-2.5 border h-[15.4rem] sm:h-[16.4rem] md:h-[17.4rem] border-slate-300 dark:border-slate-500">
+  <div className="px-3 py-2.5 border h-[14.4rem] sm:h-[15.4rem] md:h-[16.4rem] border-slate-300 dark:border-slate-500 ">
     <p>Advertisement Title</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam reiciendis possimus praesentium ipsum, dolor sit amet  excepturi nesciunt! Veritatis nihil dolorem quaerat libero laborum?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam reiciendis possimus praesentium ipsum, dolor sit amet  excepturi nesciunt!</p>
   </div>
 </div>
 
