@@ -87,7 +87,7 @@ const Component1 = () => {
                 setTheme(!theme)
               }}
               className='py-2 px-5 border border-slate-300 text-sm bg-white text-black'>{
-                theme ? "Dark Mode" : "Light Mode"
+                theme ? "Light Mode" : "Dark Mode"
               }</button>
           </div>
         </div>
@@ -101,7 +101,7 @@ const Component1 = () => {
 
 
           {/* _________________________ */}
-          <div className='p-3 bg-white dark:bg-neutral-700 shadow-lg shadow-slate-200 dark:shadow-slate-950 h-[33rem] sm:h-auto w-full sm:w-72 md:w-60'>
+          <div className='p-3 bg-white dark:bg-neutral-700 shadow-lg shadow-slate-200 dark:shadow-slate-950 h-[33rem] sm:h-auto  sm:w-72 md:w-60'>
   <div className="h-[13rem] sm:h-[14rem] md:h-[15rem] w-full ">
     <Image
       className='h-full w-full object-cover'

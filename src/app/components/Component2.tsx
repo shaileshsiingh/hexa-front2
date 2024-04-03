@@ -74,14 +74,14 @@ export default function Component2() {
 
   return (
     <>
-      <div className="py-10 pb-40">
+      <div className="dark:bg-neutral-700 py-10 pb-40">
         <div className="text-center px-2 md:px-40 lg:px-60">
           <p className='font-bold text-4xl dark:text-white'>Collection Spotlight</p>
           <p className='mt-5 text-sm'>Discover extra ordinary events with your collection spotlight make tickets exclusive access to premiunm for an unforgeteble experience. Grab yours today!</p>
         </div>
         <br />
         <br />
-        <div className="px-5 relative flex justify-center">
+        <div className="px-3 relative flex justify-center ">
           <p className="absolute top-[43%] left-2 lg:left-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center">
             <FaChevronLeft />
           </p>
