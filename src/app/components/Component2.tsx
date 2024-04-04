@@ -1,8 +1,8 @@
 "use client"
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import './Component2.css'; // Import CSS file
+import './component2.css';
 
 type CollectionDataType = {
   date: string;
@@ -46,6 +46,25 @@ const CollectionData: CollectionDataType[] = [
 
 export default function Component2() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1024) {
+        setCardsToShow(3);
+      } else if (screenWidth >= 768) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(1);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check on mount
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextCard = () => {
     setCurrentIndex((prevIndex) =>
@@ -97,15 +116,45 @@ export default function Component2() {
         <br />
         <br />
         <div className="px-3 relative flex justify-center ">
-          <p className="arrow-icon absolute top-[43%] left-2 lg:left-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={prevCard}>
-            <FaChevronLeft />
-          </p>
-          <div className="flex gap-10">
-            <CollectionCard {...CollectionData[currentIndex]} />
-          </div>
-          <p className="arrow-icon absolute top-[43%] right-2 lg:right-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={nextCard}>
-            <FaChevronRight />
-          </p>
+          {cardsToShow === 3 && (
+            <>
+              <p className="absolute top-[43%] left-2 lg:left-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={prevCard}>
+                <FaChevronLeft />
+              </p>
+              {CollectionData.map((data, index) => (
+                <CollectionCard {...data} key={index} />
+              ))}
+              <p className="absolute top-[43%] right-2 lg:right-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={nextCard}>
+                <FaChevronRight />
+              </p>
+            </>
+          )}
+          {cardsToShow === 2 && (
+            <>
+              <p className="arrow-icon absolute top-[43%] left-2 lg:left-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={prevCard}>
+                <FaChevronLeft />
+              </p>
+              <div className="flex gap-10">
+                {CollectionData.slice(currentIndex, currentIndex + cardsToShow).map((data, index) => (
+                  <CollectionCard {...data} key={index} />
+                ))}
+              </div>
+              <p className="arrow-icon absolute top-[43%] right-2 lg:right-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={nextCard}>
+                <FaChevronRight />
+              </p>
+            </>
+          )}
+          {cardsToShow === 1 && (
+            <>
+              <p className="absolute top-[43%] left-2 lg:left-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={prevCard}>
+                <FaChevronLeft />
+              </p>
+              <CollectionCard {...CollectionData[currentIndex]} />
+              <p className="absolute top-[43%] right-2 lg:right-20 border p-2 text-blue-500 cursor-pointer border-blue-600 flex justify-center items-center" onClick={nextCard}>
+                <FaChevronRight />
+              </p>
+            </>
+          )}
         </div>
       </div>
     </>
