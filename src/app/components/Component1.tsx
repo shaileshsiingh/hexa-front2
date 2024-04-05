@@ -101,7 +101,7 @@ const Component1 = () => {
 
 
           {/* _________________________ */}
-          <div className='p-3 bg-white dark:bg-neutral-700 shadow-lg shadow-slate-200 dark:shadow-slate-950 h-[33rem] sm:h-auto  sm:w-72 md:w-60'>
+          <div className='p-3 bg-white dark:bg-neutral-700 shadow-lg shadow-slate-200 dark:shadow-slate-950 h-[33rem] w-[18rem] sm:h-auto  sm:w-72 md:w-60'>
   <div className="h-[13rem] sm:h-[14rem] md:h-[15rem] w-full ">
     <Image
       className='h-full w-full object-cover'
@@ -110,7 +110,7 @@ const Component1 = () => {
 
   <div className="px-3 py-2.5 border h-[14.4rem] sm:h-[15.4rem] md:h-[16.4rem] border-slate-300 dark:border-slate-500 ">
     <p>Advertisement Title</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam reiciendis possimus praesentium ipsum, dolor sit amet  excepturi nesciunt!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam reiciendis possimus praesentium ipsum, dolor sit amet  excepturi nesciunt! dolor sit amet  excepturi nesciunt! dolor sit amet  excepturi nesciunt!</p>
   </div>
 </div>
 
